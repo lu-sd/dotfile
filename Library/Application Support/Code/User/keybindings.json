@@ -1,0 +1,289 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  // refresh browser
+  {
+    "key": "shift+r",
+    "command": "workbench.files.action.refreshFilesExplorer",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // 重命名
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // new file
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // new folder
+  {
+    "key": "shift+a",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // delete file
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // copy file
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // 剪切
+  {
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // 粘贴
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // 打开文件
+  {
+    "key": "o",
+    "command": "explorer.openAndPassFocus",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
+  },
+  // 在新tab打开文件
+  {
+    "key": "shift+o",
+    "command": "explorer.openToSide",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus && editorLangId == 'rmd'",
+    "args": {
+      "snippet": "```{r}\n${TM_SELECTED_TEXT}$0\n```"
+    },
+    "label": "input indicative of r markdown code chunk"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus && editorLangId == 'python'",
+    "args": {
+      "snippet": "# %%\n"
+    },
+    "label": "input indicative of new python cell"
+  },
+  // use vim to move when gh hover in gh model
+  {
+    "key": "h",
+    "command": "editor.action.scrollLeftHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "j",
+    "command": "editor.action.scrollDownHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "k",
+    "command": "editor.action.scrollUpHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "l",
+    "command": "editor.action.scrollRightHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "shift+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "-editor.action.previousMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "-workbench.action.terminal.findPrevious",
+    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "-workbench.action.terminal.openDetectedLink",
+    "when": "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal'"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "workbench.action.chat.open",
+    "when": "hasChatProvider"
+  },
+  {
+    "key": "ctrl+cmd+i",
+    "command": "-workbench.action.chat.open",
+    "when": "hasChatProvider"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "-workbench.action.quickchat.toggle",
+    "when": "hasChatProvider"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-python.execSelectionInTerminal",
+    "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+  },
+  // {
+  //   "key": "cmd+b",
+  //   "command": "-markdown.extension.editing.toggleBold",
+  //   "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+  // },
+  {
+    "key": "shift+cmd+r",
+    "command": "-reactSnippets.search",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "-rerunSearchEditorSearch",
+    "when": "inSearchEditor"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "workbench.view.remote"
+  },
+  // jupyter note related action
+  {
+    "key": "ctrl+; v",
+    "command": "jupyter.selectCell",
+    "when": "editorTextFocus && jupyter.hascodecells && !jupyter.webExtension && !notebookEditorFocused"
+  },
+  {
+    "key": "ctrl+; u",
+    "command": "jupyter.moveCellsUp",
+    "when": "editorTextFocus && jupyter.hascodecells && !jupyter.webExtension && !notebookEditorFocused"
+  },
+  {
+    "key": "ctrl+shift+alt+\\",
+    "command": "-jupyter.selectCell",
+    "when": "editorTextFocus && jupyter.hascodecells && !jupyter.webExtension && !notebookEditorFocused"
+  },
+  {
+    "key": "ctrl+alt+\\",
+    "command": "-jupyter.selectCellContents",
+    "when": "editorTextFocus && jupyter.hascodecells && !jupyter.webExtension && !notebookEditorFocused"
+  },
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "ctrl+; e",
+    "command": "workbench.action.quickOpen",
+    "args": "edt ",
+    "when": "editorTextFocus"
+  },
+  // {
+  //   "key": "cmd+p",
+  //   "command": "workbench.action.quickOpenPreviousEditor"
+  // },
+  // {
+  //   "key": "cmd+p",
+  //   "command": "-workbench.action.quickOpen"
+  // },
+  {
+    "key": "ctrl+=",
+    "command": "workbench.action.navigateForward",
+    "when": "canNavigateForward"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward",
+    "when": "canNavigateForward"
+  },
+  {
+    "key": "\\",
+    "command": "whichkey.show",
+    "when": "!editorTextFocus  && !inputFocus"
+  },
+  {
+    "key": "cmd+l cmd+o",
+    "command": "-extension.liveServer.goOnline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+l cmd+c",
+    "command": "-extension.liveServer.goOffline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-deleteRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "-turboConsoleLog.displayLogMessage"
+  },
+  {
+    "key": "cmd+b",
+    "command": "-mdx.toggleStrong",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'mdx'"
+  },
+  {
+    "key": "cmd+b",
+    "command": "-markdown.extension.editing.toggleBold",
+    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+  },
+  {
+    "key": "cmd+9",
+    "command": "-workbench.action.lastEditorInGroup"
+  },
+  {
+    "key": "ctrl+cmd+9",
+    "command": "-workbench.action.moveEditorToLastGroup"
+  }
+  // {
+  //   "key": "shift+;",
+  //   "command": "vim.showQuickpickCmdLine",
+  //   "when": "editorTextFocus && vim.mode != 'Insert'"
+  // }
+
+  // {
+  //   "key": "ctrl+m",
+  //   "command": "-extension.vim_ctrl+m",
+  //   "when": "editorTextFocus && vim.active && vim.use<C-m> && !inDebugRepl || vim.active && vim.use<C-m> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-m> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+  // }
+  // // {
+  //   "key": "ctrl+m",
+  //   "command": "acceptSelectedSuggestion",
+  //   "when": "suggestWidgetVisible && textInputFocus"
+  // },
+  // {
+  //   "key": "ctrl+m",
+  //   "command": "list.select",
+  //   "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  // },
+  // {
+  //   "key": "ctrl+m",
+  //   "command": "list.stickyScrollselect",
+  //   "when": "treestickyScrollFocused"
+  // }
+]

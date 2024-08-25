@@ -1,0 +1,8 @@
+.config/raycast/extensions/
+.config/zed
+.config/karabiner/a*
+.zshrc
+wallpaper
+.config/tmux/plugins/
+.DS_Store
+.config/fish/fish_variables

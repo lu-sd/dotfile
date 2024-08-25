@@ -1,0 +1,51 @@
+# set -ga terminal-overrides ",screen-256color*:Tc"
+# set-option -g default-terminal "screen-256color"
+set -g default-terminal "tmux-256color"
+set -ga terminal-overrides ",*256col*:Tc"
+set -s escape-time 0
+
+# plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'dracula/tmux'
+
+# dracula customizations
+set -g @dracula-plugins "cpu-usage ram-usage session"
+set -g @dracula-show-location false
+set -g @dracula-show-left-icon 早 
+set -g @dracula-git-disable-status true
+set -g @dracula-border-contrast true
+set -g @dracula-show-left-sep |
+set -g @dracula-left-icon-padding 1
+
+
+unbind C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
+
+# bind r source-file ~/.tmux.conf
+
+## base reset
+set -g base-index 1
+set -g pane-base-index 1
+set-window-option -g pane-base-index 1
+
+set-window-option -g mode-keys vi
+# bind -T copy-mode-vi v send-keys -X begin-selection
+# bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+set -g set-clipboard on  
+
+set-option -g history-limit 25000
+
+# Use Alt-arrow keys without prefix key to switch panes
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+# Shift arrow to switch windows
+bind -n S-Left  previous-window
+bind -n S-Right next-window
+
+
+run '~/.tmux/plugins/tpm/tpm'

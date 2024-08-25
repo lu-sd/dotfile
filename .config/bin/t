@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+FOLDER="$(basename "$PWD")"
+SESSION="$(tmux list-sessions -F '#S' 2>/dev/null | grep "^$FOLDER$" )" 
+
+if [ -z "$TMUX" ]; then #  if  $TMUX empty, not in tmux
+  echo "- [Not] in tmux"
+  if [ -n "$SESSION" ]; then # if session exists
+    echo "session: [ $FOLDER ] exists, attaching"
+    sleep 0.5
+    tmux attach-session -t "$FOLDER"
+  else
+    echo "Creating new session: [ $FOLDER ]"
+    sleep 0.5
+    tmux new-session -s "$FOLDER" # create new session
+  fi
+else # in tmux
+  echo "- [In] tmux"
+  if [ -n "$SESSION" ]; then
+    echo "session: [ $FOLDER ] exists, switching [ $FOLDER ]"
+    sleep 0.5
+    tmux switch-client -t "$FOLDER"
+  else
+    echo "create new session: [ $FOLDER ]"
+    tmux new-session -d -s "$FOLDER"
+    sleep 0.5
+    tmux switch-client -t "$FOLDER"
+  fi
+fi
