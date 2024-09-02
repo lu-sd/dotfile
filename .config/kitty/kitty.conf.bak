@@ -3,22 +3,44 @@
 # include ~/github/dotfiles-latest/kitty/themes/themes/ChallengerDeep.conf
 # include ~/github/dotfiles-latest/kitty/themes/themes/Catppuccin-Mocha.conf
 # include ~/github/dotfiles-latest/kitty/themes/themes/Eldritch.conf
-include ./GitHub Dark Colorblind.conf
+# include ./GitHub Dark Colorblind.conf
+include ./Dracula.conf
 
-font_size 18.0
+font_size 19.0
 
+font_family VictorMono Nerd Font medium 
+italic_font VictorMono Nerd Font Italic
+bold_font VictorMono Nerd Font Bold
+bold_italic_font VictorMono Nerd Font Bold Italic
 # Make sure you have the fonts installed
-font_family JetBrainsMono Nerd Font 
+#
+# font_family      JetBrainsMono Nerd Font Mono
+# italic_font JetBrainsMono Nerd Font Italic
+# bold_font        JetBrainsMono Nerd Font Mono Bold
+# bold_italic_font JetBrainsMono Nerd Font Mono Bold Italic
+# font_family JetBrainsMono Nerd Font Mono Medium
+# italic_font JetBrainsMono Nerd Font Mono Medium Italic
+# # font_family   Fira Code Regular
+# bold_font  JetBrainsMono Nerd Font Mono Bold      
+# bold_italic_font JetBrainsMono Nerd Font Mono Bold Italic
 
 # font_family MesloLGS Nerd Font
 
 # Kitty's font was more spaced compared to alacritty's, tried font variations
 # but it didn't change, so I went with this, it works fine
-modify_font cell_width 95%
-# modify_font cell_height -2px
+modify_font cell_height 5px
+modify_font cell_width 101%
+# modify_font cell_height 5px
+# modify_font baseline 1
+# modify_font underline_position -2
+# modify_font underline_thickness 150%
+# modify_font strikethrough_position 2px
 
 scrollback_lines 10000
+cursor_blink_interval 0
+cursor_stop_blinking_after 1 
 
+macos_option_as_alt yes
 # The following command checks if tmux is installed.
 # If tmux is installed, it automatically attaches to an existing tmux session.
 # If no tmux session exists, a new one is created.
@@ -42,18 +64,25 @@ editor /opt/homebrew/bin/nvim
 # "yes" disables round corners and hides the title bar 
 # "titlebar-only" leaves round corners but hides title bar
 # hide_window_decorations yes
-# hide_window_decorations titlebar-only
+hide_window_decorations titlebar-only
+tab_title_template "{index}: {title.split('/')[-1]}"
+
 
 #: The window padding (in pts) (blank area between the text and the
 #: window border). A single value sets all four sides. Two values set
 #: the vertical and horizontal sides. Three values set top, horizontal
 #: and bottom. Four values set top, right, bottom and left.
-window_padding_width 5 5 0 0
+window_padding_width 25 2 0 3
+background_opacity 1 
 
+clipboard_control write-clipboard write-primary read-clipboard read-primary
+
+# scrollback_pager nvim -u ~/.config/nvim/kitty_page.lua -R -M -
+
+scrollback_pager nvim -u NONE -R -M -c 'lua require("kitty+page")(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)' -
 # I'm adding these below the theme in case the theme sets them
 # cursor #ffffff
 # cursor_text_color #000000
-
 #: Ask for confirmation when closing an OS window or a tab with at
 #: least this number of kitty windows in it by window manager (e.g.
 #: clicking the window close button or pressing the operating system
@@ -66,15 +95,16 @@ window_padding_width 5 5 0 0
 #: windows where some command is currently running. Note that if you
 #: want confirmation when closing individual windows, you can map the
 #: close_window_with_confirmation action.
-confirm_os_window_close 0
-tab_bar_edge top
-tab_bar_style powerline
+confirm_os_window_close 1
+tab_bar_edge bottom
+tab_bar_align center
+tab_bar_style slant
 
 
 
 
 
 # BEGIN_KITTY_THEME
-# GitHub Dark
-# include current-theme.conf
+# Tokyo Night Moon
+include current-theme.conf
 # END_KITTY_THEME
