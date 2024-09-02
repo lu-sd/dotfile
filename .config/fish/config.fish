@@ -1,6 +1,7 @@
 switch (uname)
     case Darwin ## for macos
         eval (/opt/homebrew/bin/brew shellenv)
+        fish_add_path -a /opt/homebrew/bin/
         fish_add_path -a /opt/homebrew/Caskroom/miniforge/base/condabin
         abbr bic "brew install --cask"
         abbr bin "brew info"
@@ -60,6 +61,7 @@ fish_add_path ~/.config/bin
 fish_add_path /usr/local/go/bin
 fish_add_path /Users/yxiang/go/bin
 
+set -x XDG_CONFIG_HOME $HOME/.config
 set -Ux EDITOR nvim
 set -Ux OPENER nvim
 
@@ -72,7 +74,6 @@ abbr g lazygit
 abbr rm "rm -i"
 abbr s "kitten ssh"
 abbr lc "nvim leetcode.nvim"
-alias rm='rm -i'
 
 
 # starship init fish | source
