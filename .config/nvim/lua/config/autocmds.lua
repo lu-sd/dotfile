@@ -20,13 +20,7 @@ vim.api.nvim_create_autocmd("FocusLost", {
   pattern = "*",
   command = "wa",
 })
--- disable markdown concel
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "markdown" },
-  callback = function()
-    vim.wo.conceallevel = 0
-  end,
-})
+
 local augroup = vim.api.nvim_create_augroup
 local autocmds = vim.api.nvim_create_autocmd
 augroup("discontinue_comments", { clear = true })

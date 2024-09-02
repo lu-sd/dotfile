@@ -9,4 +9,3 @@ opt.clipboard = "unnamedplus"
 -- vim.o.cursorline = true
 opt.cursorline = false
 -- opt.cursorcolumn = false
-vim.wo.conceallevel = 0

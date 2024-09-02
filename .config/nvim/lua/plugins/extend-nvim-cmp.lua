@@ -12,11 +12,11 @@ return {
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
       -- ["<tab>"] = cmp.confirm({ select = true }),
       ["<Tab>"] = cmp.mapping(function(fallback)
-        if vim.snippet.active({ direction = 1 }) then
-          vim.schedule(function()
-            vim.snippet.jump(1)
-          end)
-        elseif cmp.visible() and has_words_before() then
+        -- if vim.snippet.active({ direction = 1 }) then
+        --   vim.schedule(function()
+        --     vim.snippet.jump(1)
+        --   end)
+        if cmp.visible() and has_words_before() then
           -- elseif cmp.visible() then
           cmp.confirm({ select = true })
         -- elseif has_words_before() then
@@ -25,18 +25,15 @@ return {
           fallback()
         end
       end, { "i", "s" }),
-      ["<S-Tab>"] = cmp.mapping(function(fallback)
-        -- if cmp.visible() then
-        --   cmp.select_prev_item()
-        -- elseif vim.snippet.active({ direction = -1 }) then
-        if vim.snippet.active({ direction = -1 }) then
-          vim.schedule(function()
-            vim.snippet.jump(-1)
-          end)
-        else
-          fallback()
-        end
-      end, { "i", "s" }),
+      -- ["<S-Tab>"] = cmp.mapping(function(fallback)
+      --   if vim.snippet.active({ direction = -1 }) then
+      --     vim.schedule(function()
+      --       vim.snippet.jump(-1)
+      --     end)
+      --   else
+      --     fallback()
+      --   end
+      -- end, { "i", "s" }),
       ["<CR>"] = function(fallback)
         cmp.abort()
         fallback()

@@ -1,6 +1,7 @@
 return {
   {
     "catppuccin/nvim",
+    lazy = true,
     name = "catppuccin",
     keys = {
       {
@@ -9,14 +10,6 @@ return {
         desc = "Colorscheme with preview",
       },
     },
-    lazy = false,
-    priority = 1000,
-    config = function()
-      -- Optionally configure and load the colorscheme
-      -- directly inside the plugin declaration.
-      vim.cmd.colorscheme("catppuccin")
-    end,
-
     opts = {
       integrations = {
         aerial = true,
@@ -56,4 +49,20 @@ return {
       },
     },
   },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    opts = {
+      style = "night",
+      on_colors = function(colors)
+        colors.border = "#c0caf5"
+      end,
+    },
+  },
+  -- {
+  --   "nvim-zh/colorful-winsep.nvim",
+  --   disable = true,
+  --   config = true,
+  --   event = { "WinLeave" },
+  -- },
 }
