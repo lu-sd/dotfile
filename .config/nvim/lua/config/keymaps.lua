@@ -14,6 +14,7 @@ vim.keymap.set("n", "<leader>ll", "<cmd>Leet list<cr>", { desc = "leetcode list"
 vim.keymap.set("n", "<leader>ls", "<cmd>Leet submit<cr>", { desc = "leetcode submit" })
 vim.keymap.set("n", "<leader>lr", "<cmd>Leet run<cr>", { desc = "leetcode run" })
 --
+vim.api.nvim_set_keymap("i", "<C-j>", "<Nop>", { noremap = true, silent = true })
 vim.keymap.set("i", "jk", "<ESC>", { noremap = true, silent = true })
 vim.keymap.set(
   "n",

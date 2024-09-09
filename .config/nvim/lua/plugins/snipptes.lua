@@ -20,18 +20,18 @@ return {
       false,
     },
     {
-      "<C-,>",
+      "<C-k>",
       function()
-        return vim.snippet.active({ direction = 1 }) and "<cmd>lua vim.snippet.jump(1)<cr>" or "<Tab>"
+        return vim.snippet.active({ direction = 1 }) and "<cmd>lua vim.snippet.jump(1)<cr>" --or "<C-k>"
       end,
       expr = true,
       silent = true,
       mode = { "i", "s" },
     },
     {
-      "<C-.>",
+      "<C-j>",
       function()
-        return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>" or "<S-Tab>"
+        return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>" -- or "<C-j>"
       end,
       expr = true,
       silent = true,
