@@ -21,7 +21,6 @@ brew install
 
 ```
 brew install wget lazygit zoxide fzf yazi fish bat ripgrep neovim tmux stow
-brew install fish bat ripgrep neovim tmux stow
 brew install --cask nikitabobko/tap/aerospace
 brew install --cask font-victor-mono-nerd-font
 brew install --cask kitty
@@ -52,8 +51,7 @@ fisher install PatrickF1/fzf.fish
 
 macOS setting:
 turn on
-
 - "Keyboard navigation" in keyboard shortcuts.
-- "Group diwndows by application"
-  turn off
+- "Group windows by application"
+turn off
 - "Displays have separate Spaces"
