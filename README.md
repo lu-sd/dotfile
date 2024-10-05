@@ -44,6 +44,7 @@ brew install --cask cyberduck
 brew install --cask visual-studio-code
 brew install --cask slack
 brew install --cask temurin ## JDK https://adoptium.net/
+brew install --cask zoom
 # brew install --cask font-jetbrains-mono-nerd-font
 # brew install --cask alacritty # swith to kitty
 #  python environment
