@@ -14,7 +14,7 @@ after-login-command = []
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = []
 
-# Start AeroSpace at loginon-focus-changed
+# Start AeroSpace at login
 start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
@@ -24,7 +24,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 40
+accordion-padding = 30
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -57,13 +57,15 @@ on-focus-changed = "move-mouse window-lazy-center"
 inner.horizontal = 5
 inner.vertical = 5
 outer.left = 5
-outer.bottom = 5
-outer.top = 5
+outer.bottom = 4
+outer.top = 3
 outer.right = 5
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 [mode.main.binding]
+cmd-h = []                     # Disable "hide application"
+cmd-alt-h = []                 # Disable "hide others"
 cmd-alt-shift-f = 'fullscreen'
 # All possible keys:
 # - Letters.        a, b, c, ..., z

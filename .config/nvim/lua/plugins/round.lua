@@ -21,22 +21,23 @@ return {
       },
     },
   },
-  {
-    "folke/noice.nvim",
-    opts = {
-      presets = {
-        lsp_doc_border = true,
-      },
-    },
-  },
+  -- {
+  --   "folke/noice.nvim",
+  --   opts = {
+  --     presets = {
+  --       lsp_doc_border = true,
+  --     },
+  --   },
+  -- },
   {
     "neovim/nvim-lspconfig",
-    opts = {
-      diagnostics = {
+    opts = function(_, opts)
+      -- keys go here
+      opts.diagnostics = {
         float = {
           border = "rounded",
         },
-      },
-    },
+      }
+    end,
   },
 }

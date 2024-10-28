@@ -1,19 +1,17 @@
 git:
-  pull:
-    mode: "rebase"
   paging:
     colorArg: always
     pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
   branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
 
 customCommands:
-  - key: "<c-f>" # Ctrl-f (think "full screen") to show selected commit
+  - key: "<c-o>" # Ctrl-f (think "full screen") to show selected commit https://github.com/jesseduffield/lazygit/issues/1113
     context: "commits"
     command: "git show {{.SelectedLocalCommit.Sha}}"
     subprocess: true
     description: "Show selected commit"
     stream: true
-  - key: "<c-f>" # Ctrl-f (think "full screen") to show selected commit
+  - key: "<c-o>" # Ctrl-f (think "full screen") to show selected commit
     context: "files"
     command: "git diff "
     subprocess: true

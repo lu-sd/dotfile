@@ -1,7 +1,27 @@
 return {
   "folke/noice.nvim",
+  enabled = false,
   event = "VeryLazy",
   opts = {
+    -- https://github.com/LazyVim/LazyVim/discussions/2223
+    routes = {
+      {
+        filter = {
+          event = "msg_show",
+          -- kind = "echo",
+          any = {
+            { find = "mini.surround" },
+            { find = "%d+L, %d+B" },
+            { find = "; after #%d+" },
+            { find = "; before #%d+" },
+          },
+        },
+        view = "mini",
+        opts = {
+          skip = true,
+        },
+      },
+    },
     lsp = {
       signature = {
         opts = {
