@@ -6,12 +6,12 @@
 -- vim.api.nvim_create_autocmd("InsertLeave", {
 --   group = "cursorline_cursorcolumn",
 --   pattern = "*",
---   command = "set cursorline cursorcolumn",
+--   command = "set cursorline",
 -- })
 -- vim.api.nvim_create_autocmd("InsertEnter", {
 --   group = "cursorline_cursorcolumn",
 --   pattern = "*",
---   command = "set nocursorline nocursorcolumn",
+--   command = "set nocursorline",
 -- })
 --
 vim.api.nvim_create_augroup("auto_save", { clear = true })
@@ -19,6 +19,14 @@ vim.api.nvim_create_autocmd("FocusLost", {
   group = "auto_save",
   pattern = "*",
   command = "wa",
+})
+
+-- set linenumber
+-- https://github.com/LazyVim/LazyVim/discussions/1892
+vim.api.nvim_create_autocmd("BufRead", {
+  callback = function()
+    vim.api.nvim_set_hl(0, "LineNr", { fg = "#ff9900" })
+  end,
 })
 
 local augroup = vim.api.nvim_create_augroup

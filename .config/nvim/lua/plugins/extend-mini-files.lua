@@ -3,33 +3,31 @@ return {
     "echasnovski/mini.files",
     keys = {
       {
-        "<leader>E",
+        "<leader>e",
         function()
           require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
         end,
         desc = "Open mini.files (directory of current file)",
       },
       {
-        "<leader>e",
+        "<leader>E",
         function()
           require("mini.files").open(vim.uv.cwd(), true)
         end,
         desc = "Open mini.files (cwd)",
       },
-      {
-        "<leader>fm",
-        false,
-      },
-      {
-        "<leader>fM",
-        false,
-      },
+      { "<leader>fm", false },
+      { "<leader>fM", false },
       -- {
-      --   "<leader>fm",
+      --   "<leader>fo",
       --   function()
-      --     require("mini.files").open(LazyVim.root(), true)
+      --     local mf = require("mini.files")
+      --     if not mf.close() then
+      --       mf.open(vim.api.nvim_buf_get_name(0))
+      --       mf.reveal_cwd()
+      --     end
       --   end,
-      --   desc = "Open mini.files (root)",
+      --   desc = "mini current file",
       -- },
     },
     opts = {
@@ -40,7 +38,7 @@ return {
         width_preview = 100,
       },
       options = {
-        use_as_default_explorer = true,
+        use_as_default_explorer = false,
       },
       mappings = {
         -- enter and close mini.file
@@ -50,6 +48,12 @@ return {
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
+    lazy = true,
+    -- opts = {
+    --   filesystem = {
+    --     hijack_netrw_behavior = " disabled",
+    --   },
+    -- },
     -- opts = {
     --   filesystem = {
     --     filtered_items = {

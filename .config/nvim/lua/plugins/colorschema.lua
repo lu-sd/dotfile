@@ -55,7 +55,7 @@ return {
     opts = {
       style = "night",
       on_colors = function(colors)
-        colors.border = "#c0caf5"
+        colors.border = "#64748b"
       end,
     },
   },
