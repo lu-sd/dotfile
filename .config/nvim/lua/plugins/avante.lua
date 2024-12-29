@@ -1,13 +1,17 @@
+if true then
+  return {}
+end
 return {
   "yetone/avante.nvim",
   --event = "VeryLazy",
-  lazy = true,
+  lazy = false,
+  enabled = false,
   build = "make", -- This is Optional, only if you want to use tiktoken_core to calculate tokens count
   opts = {
     -- add any opts here
     provider = "copilot",
     behaviour = {
-      auto_suggestions = true,
+      auto_suggestions = false,
     },
     mappings = {
       diff = {
@@ -19,6 +23,7 @@ return {
         prev = "[x",
       },
     },
+    hints = { enabled = false },
   },
   keys = {
     {
@@ -30,6 +35,13 @@ return {
       desc = "avante: ask",
     },
   },
+  -- highlights = {
+  --   ---@type AvanteConflictHighlights
+  --   diff = {
+  --     current = "DiffChange",
+  --     incoming = "DiffAdd",
+  --   },
+  -- },
   dependencies = {
     -- "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
     "echasnovski/mini.icons",

@@ -1,3 +1,6 @@
+if true then
+  return {}
+end
 return {
   {
     -- Install markdown preview, use npx if available.

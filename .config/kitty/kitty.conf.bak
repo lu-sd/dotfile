@@ -1,12 +1,12 @@
 # Kitty theme
-# Add the theme at the top, any setting below the theme will be overriden
-# include ~/github/dotfiles-latest/kitty/themes/themes/ChallengerDeep.conf
-# include ~/github/dotfiles-latest/kitty/themes/themes/Catppuccin-Mocha.conf
-# include ~/github/dotfiles-latest/kitty/themes/themes/Eldritch.conf
-# include ./GitHub Dark Colorblind.conf
-include ./Dracula.conf
+#include ./Dracula.conf
 
 font_size 19.0
+
+# font_family PlemolJP Console NF
+# italic_font VictorMono Nerd Font Italic
+# bold_font VictorMono Nerd Font Bold
+# bold_italic_font VictorMono Nerd Font Bold Italic
 
 font_family VictorMono Nerd Font medium 
 italic_font VictorMono Nerd Font Italic
@@ -72,7 +72,7 @@ tab_title_template "{index}: {title.split('/')[-1]}"
 #: window border). A single value sets all four sides. Two values set
 #: the vertical and horizontal sides. Three values set top, horizontal
 #: and bottom. Four values set top, right, bottom and left.
-window_padding_width 25 2 0 3
+window_padding_width 25 2 6 3
 background_opacity 1 
 
 clipboard_control write-clipboard write-primary read-clipboard read-primary
@@ -101,10 +101,10 @@ tab_bar_align center
 tab_bar_style slant
 
 
-
+copy_on_select yes
 
 
 # BEGIN_KITTY_THEME
-# Tokyo Night Moon
+# One Half Dark
 include current-theme.conf
 # END_KITTY_THEME

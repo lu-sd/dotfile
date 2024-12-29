@@ -1,0 +1,9 @@
+[[manager.prepend_keymap]]
+on = "p"
+run = "plugin --sync smart-paste"
+desc = "Paste into the hovered directory or CWD"
+
+[[manager.prepend_keymap]]
+on = "T"
+run = "plugin --sync hide-preview"
+desc = "Hide or show preview"

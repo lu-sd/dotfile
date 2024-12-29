@@ -2,10 +2,6 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[python]": {
-    // "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true
-  },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -68,7 +64,7 @@
   "editor.guides.indentation": true,
   "editor.guides.highlightActiveIndentation": true,
   "editor.occurrencesHighlight": "off",
-  "editor.renderLineHighlight": "line",
+  "editor.renderLineHighlight": "gutter",
   "editor.selectionHighlight": false,
   "editor.stickyScroll.enabled": false,
   "editor.suggest.insertMode": "replace",
@@ -97,12 +93,13 @@
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "never",
   "github.copilot.enable": {
-    "quarto": false,
-    // "*": true,
-    "markdown": true,
+    "*": true,
     "plaintext": false,
-    "scminput": false
+    "markdown": true,
+    "scminput": false,
+    "quarto": false
   },
+  "deno.path": "/opt/homebrew/bin/deno",
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "interactiveWindow.executeWithShiftEnter": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -260,13 +257,21 @@
     },
     // vim easymotion
 
-    {
-      "before": ["g", "e", " "],
-      "after": ["leader", "leader", "s"]
-    },
+    // {
+    //   "before": ["g", "e", " "],
+    //   "after": ["leader", "leader", "s"]
+    // },
     {
       "before": ["g", "e", "w"],
       "after": ["leader", "leader", "w"]
+    },
+    {
+      "before": ["g", "e", "k"],
+      "after": ["leader", "leader", "k"]
+    },
+    {
+      "before": ["g", "e", "j"],
+      "after": ["leader", "leader", "j"]
     },
     {
       "before": ["g", "e", "b"],
@@ -867,6 +872,9 @@
   "editor.tabCompletion": "on",
   "editor.suggest.localityBonus": true,
   "terminal.integrated.inheritEnv": false,
+  "yaml.schemas": {
+    "file:///Users/yxiang/.vscode/extensions/atlassian.atlascode-3.0.10/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
   "atlascode.bitbucket.explorer.enabled": true,
   "atlascode.bitbucket.explorer.relatedJiraIssues.enabled": false,
   "atlascode.bitbucket.explorer.refreshInterval": 35,
@@ -887,5 +895,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "excalidraw.theme": "dark",
-  "makefile.configureOnOpen": false // for list selection
+  "makefile.configureOnOpen": false,
+  "editor.accessibilitySupport": "off",
+  "window.confirmBeforeClose": "always"
 }

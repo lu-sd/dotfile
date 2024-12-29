@@ -1,3 +1,6 @@
+if true then
+  return {}
+end
 return {
   "kawre/leetcode.nvim",
   build = ":TSUpdate html",
@@ -17,6 +20,7 @@ return {
     { "<leader>9c", "<cmd>Leet lang<cr>", { desc = "leetcode lang" } },
     { "<leader>9s", "<cmd>Leet submit<cr>", { desc = "leetcode submit" } },
     { "<leader>9r", "<cmd>Leet run<cr>", { desc = "leetcode run" } },
+    { "<leader>9o", "<cmd>Leet open<cr>", { desc = "leetcode open" } },
   },
   opts = {
     arg = "leetcode.nvim",

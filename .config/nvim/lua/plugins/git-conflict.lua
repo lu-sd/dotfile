@@ -1,6 +1,9 @@
+if true then
+  return {}
+end
 return {
   "akinsho/git-conflict.nvim",
-  lazy = false,
+  lazy = true,
   opts = {
     default_mappings = {
       ours = "<leader>ho",
@@ -9,6 +12,10 @@ return {
       both = "<leader>hb",
       next = "]x",
       prev = "[x",
+    },
+    highlights = { -- They must have background color, otherwise the default color will be used
+      current = "DiffDelete",
+      incoming = "DiffChange",
     },
   },
   keys = {

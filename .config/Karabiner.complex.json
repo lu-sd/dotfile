@@ -1,0 +1,161 @@
+{
+    "description": "Change right_command+key to symbol key",
+    "manipulators": [
+        {
+            "from": {
+                "key_code": "e",
+                "modifiers": {
+                    "mandatory": [
+                        "right_command"
+                    ],
+                    "optional": [
+                        "any"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "equal_sign"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "from": {
+                "key_code": "r",
+                "modifiers": {
+                    "mandatory": [
+                        "right_command"
+                    ],
+                    "optional": [
+                        "any"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "hyphen",
+                    "modifiers": "left_shift"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "from": {
+                "key_code": "d",
+                "modifiers": {
+                    "mandatory": [
+                        "right_command"
+                    ],
+                    "optional": [
+                        "any"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "equal_sign",
+                    "modifiers": "left_shift"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "from": {
+                "key_code": "f",
+                "modifiers": {
+                    "mandatory": [
+                        "right_command"
+                    ],
+                    "optional": [
+                        "any"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "hyphen"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "from": {
+                "key_code": "j",
+                "modifiers": {
+                    "mandatory": [
+                        "right_command"
+                    ],
+                    "optional": [
+                        "any"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "open_bracket"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "from": {
+                "key_code": "k",
+                "modifiers": {
+                    "mandatory": [
+                        "right_command"
+                    ],
+                    "optional": [
+                        "any"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "close_bracket"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "from": {
+                "key_code": "u",
+                "modifiers": {
+                    "mandatory": [
+                        "right_command"
+                    ],
+                    "optional": [
+                        "any"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "open_bracket",
+                    "modifiers": "left_shift"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "from": {
+                "key_code": "i",
+                "modifiers": {
+                    "mandatory": [
+                        "right_command"
+                    ],
+                    "optional": [
+                        "any"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "close_bracket",
+                    "modifiers": "left_shift"
+                }
+            ],
+            "type": "basic"
+        }
+    ]
+}
