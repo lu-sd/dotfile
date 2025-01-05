@@ -1,11 +1,8 @@
-if true then
-  return {}
-end
 return {
   "yetone/avante.nvim",
   --event = "VeryLazy",
-  lazy = false,
-  enabled = false,
+  -- lazy = false,
+  -- enabled = false,
   build = "make", -- This is Optional, only if you want to use tiktoken_core to calculate tokens count
   opts = {
     -- add any opts here
@@ -13,16 +10,16 @@ return {
     behaviour = {
       auto_suggestions = false,
     },
-    mappings = {
-      diff = {
-        ours = "<leader>ao",
-        theirs = "<leader>al",
-        both = "cb",
-        cursor = "cc",
-        next = "]x",
-        prev = "[x",
-      },
-    },
+    -- mappings = {
+    --   diff = {
+    --     ours = "<leader>ao",
+    --     theirs = "<leader>al",
+    --     both = "cb",
+    --     cursor = "cc",
+    --     next = "]x",
+    --     prev = "[x",
+    --   },
+    -- },
     hints = { enabled = false },
   },
   keys = {

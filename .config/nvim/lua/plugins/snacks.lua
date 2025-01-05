@@ -2,7 +2,7 @@ return {
   "folke/snacks.nvim",
   enabled = true,
   opts = {
-    words = { enabled = true },
+    words = { enabled = false },
     terminal = {
       win = {
         position = "float",

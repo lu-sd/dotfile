@@ -21,9 +21,14 @@ opt.cursorline = true
 opt.cursorlineopt = "number"
 opt.showcmd = false
 opt.showmode = true
+opt.virtualedit = "block"
+opt.inccommand = "split"
 -- vim.cmd([[highlight LineNr guifg=]])
 -- vim.cmd("hi LineNr guifg=")
 -- https://github.com/LazyVim/LazyVim/issues/556
 local float = { focusable = true, style = "minimal", border = "rounded" }
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, float)
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, float)
+
+-- expand ee to e %:h using <c-]
+vim.cmd([[cnoreabbrev <expr> ee getcmdtype() == ':' && getcmdline() == 'ee' ? 'e '.expand('%:h').'/' : 'ee']])

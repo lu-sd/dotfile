@@ -1,6 +1,3 @@
-if true then
-  return {}
-end
 return {
   "akinsho/bufferline.nvim",
   keys = {
@@ -22,6 +19,11 @@ return {
   opts = {
     options = {
       show_buffer_close_icons = false,
+
+      indicator = {
+        icon = "▎", -- this should be omitted if indicator style is not 'icon'
+        style = "underline",
+      },
     },
   },
 }

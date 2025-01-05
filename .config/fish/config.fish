@@ -38,6 +38,8 @@ set -U fish_key_bindings fish_vi_key_bindings
 
 
 abbr v nvim
+abbr dr "deno -A solve.ts"
+abbr dt "deno test -A slove_test.ts"
 abbr g lazygit
 abbr rm "rm -i"
 abbr m spotify_player
@@ -55,7 +57,9 @@ bind -M insert \cr _fzf_search_history
 bind -M insert \cf forward-char
 # for "normal" mode
 bind -M default \cf forward-char
-
+bind -M visual y fish_clipboard_copy
+bind -M default yy fish_clipboard_copy
+bind -M default p fish_clipboard_paste
 set -g fish_escape_delay_ms 30
 
 

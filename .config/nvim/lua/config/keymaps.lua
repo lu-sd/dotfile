@@ -47,3 +47,33 @@ end, { desc = "Format" })
 --   "<cmd>TmuxNavigatePrevious<cr><esc>",
 --   { desc = "Move cursor to previous pane" }
 -- )
+--
+-- turn on very magic vim regex.
+vim.keymap.set("c", "s", function()
+  local cmd = vim.fn.getcmdline()
+  if cmd == "" or cmd == "'<,'>" then
+    return "s/\\v"
+  end
+  return "s"
+end, { expr = true })
+vim.keymap.set("n", "/", "/\\v", { noremap = true })
+vim.keymap.set("n", "?", "?\\v", { noremap = true })
+
+-- https://github.com/echasnovski/mini.nvim/discussions/1009
+-- local remap = function(mode, lhs_from, lhs_to)
+--   local keymap = vim.fn.maparg(lhs_from, mode, false, true)
+--   local rhs = keymap.callback or keymap.rhs
+--   if rhs == nil then
+--     error("Could not remap from " .. lhs_from .. " to " .. lhs_to)
+--   end
+--   vim.keymap.set(mode, lhs_to, rhs, { desc = keymap.desc })
+-- end
+
+-- https://github.dev/echasnovski/nvim/tree/a3916554cb3cada94b7c4a1f7a1c4d6ab4e8b558
+local nmap_leader = function(suffix, rhs, desc, opts)
+  opts = opts or {}
+  opts.desc = desc
+  vim.keymap.set("n", "<Leader>" .. suffix, rhs, opts)
+end
+nmap_leader("oh", "<Cmd>normal gxiagxila<CR>", "Move arg left")
+nmap_leader("ol", "<Cmd>normal gxiagxina<CR>", "Move arg right")

@@ -14,7 +14,7 @@ return {
           event = "msg_show",
           -- kind = "echo",
           any = {
-            { find = "mini.surround" },
+            -- { find = "mini.surround" },
             { find = "%d+L, %d+B" },
             { find = "; after #%d+" },
             { find = "; before #%d+" },

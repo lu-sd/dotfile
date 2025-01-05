@@ -12,29 +12,42 @@ return {
       },
       inlay_hints = { enabled = false },
       servers = {
+
         tailwindcss = {
           mason = false,
-          -- exclude a filetype from the default_config
-          filetypes_exclude = { "markdown", "typescript", "javascript" },
-          root_dir = function(fname)
-            local root_pattern =
-              require("lspconfig").util.root_pattern("tailwind.config.cjs", "tailwind.config.js", "postcss.config.js")
-            return root_pattern(fname)
-          end,
-        },
-        denols = {
-          mason = true,
-          filetypes = { "typescript", "typescriptreact", "javascript" },
           root_dir = function(...)
-            return require("lspconfig").util.root_pattern("deno.jsonc", "deno.json")(...)
+            require("lspconfig").util.root_pattern("tailwind.config.cjs", "tailwind.config.js", "postcss.config.js")(
+              ...
+            )
           end,
         },
+
+        denols = {
+          on_attach = function(client, _)
+            client.server_capabilities.semanticTokensProvider = false
+          end,
+          mason = false,
+          init_options = {
+            lint = false,
+            unstable = true,
+          },
+          -- filetypes = { "typescript", "typescriptreact" },
+          root_dir = require("lspconfig").util.root_pattern("deno.json"),
+        },
+
         vtsls = {
           mason = false,
+          on_attach = function(client, _)
+            client.server_capabilities.semanticTokensProvider = false
+          end,
           root_dir = require("lspconfig").util.root_pattern("package.json"),
         },
+
         gopls = {
           mason = false,
+          on_attach = function(client, _)
+            client.server_capabilities.semanticTokensProvider = false
+          end,
           settings = {
             gopls = {
               analyses = {
@@ -57,3 +70,5 @@ return {
     end,
   },
 }
+-- https://github.com/LazyVim/LazyVim/discussions/2397
+-- disable semanticTokensProvider
